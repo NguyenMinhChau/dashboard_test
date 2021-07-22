@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>QUẢN LÝ NỘI BỘ</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS-->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/main1.css">
+  <link rel="icon" href="https://www.saga.vn/uploads/thumbnail%20300x300/CIO.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!-- or -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <!-- Font-icon css-->
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
+
+  <!-- Bootstrap -->
+  <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Datatables -->
+
+  <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+  <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+  <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+  <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="../build/css/custom.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <!--Sweetalert2-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!--Animate.css-->
+  <link rel="stylesheet" href="../fontawesome-free-5.12.1-web" />
+</head>
+
+<body onload="time()" class="app sidebar-mini rtl">
+  <script>
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      },
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+
+    Toast.fire({
+      icon: 'success',
+      title: '<b style="font-size:12px; color:red;"><i style="color:green; font-size: 12px;">Tab QUẢN LÝ NỘI BỘ</i> <br>Copyright &copy; Nguyễn Minh Châu 2021</b>'
+    })
+  </script>
+  <!-- Navbar-->
+  <header class="app-header">
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="bang-dieu-khien.html" data-toggle="sidebar"
+      aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+
+
+      <!-- User Menu-->
+      <li><a class="app-nav__item" href="bang-dieu-khien.html"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+
+      </li>
+    </ul>
+  </header>
+  <!-- Sidebar menu-->
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="images/hay.png" width="50px"
+        alt="User Image">
+      <div>
+        <p class="app-sidebar__user-name animate__animated animate__fadeInUp"><b>Nguyễn Minh Châu</b></p>
+        <p class="app-sidebar__user-designation animate__animated animate__fadeInRight">Chào mừng bạn trở lại</p>
+      </div>
+    </div>
+    <hr>
+    <ul class="app-menu">
+      <li><a class="app-menu__item haha" href="POS-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
+          <span class="app-menu__label">POS Bán Hàng</span></a></li>
+      <li><a class="app-menu__item active" href="bang-dieu-khien.html"><i
+            class='app-menu__icon bx bx-tachometer'></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item " href="quan-ly-nhan-vien.html"><i class='app-menu__icon bx bx-id-card'></i>
+          <span class="app-menu__label">Quản lý nhân viên</span></a></li>
+      <li><a class="app-menu__item" href="quan-ly-khach-hang.html"><i class='app-menu__icon bx bx-user-voice'></i><span
+            class="app-menu__label">Quản lý khách
+            hàng</span></a></li>
+      <li><a class="app-menu__item" href="quan-ly-san-pham.html"><i
+            class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản
+            phẩm</span></a>
+      </li>
+      <li><a class="app-menu__item" href="quan-ly-don-hang.html"><i class='app-menu__icon bx bx-task'></i><span
+            class="app-menu__label">Quản lý đơn hàng</span></a></li>
+      <li><a class="app-menu__item" href="quan-ly-noi-bo.html"><i class='app-menu__icon bx bx-run'></i><span
+            class="app-menu__label">Quản lý nội bộ
+          </span></a></li>
+      <li><a class="app-menu__item" href="bang-ke-luong.html"><i class='app-menu__icon bx bx-dollar'></i><span
+            class="app-menu__label">Bảng kê lương</span></a></li>
+      <li><a class="app-menu__item" href="bao-cao-doanh-thu.html"><i
+            class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh
+            thu</span></a>
+      </li>
+      <li><a class="app-menu__item" href="lich-cong-tac.html"><i class='app-menu__icon bx bx-calendar-check'></i><span
+            class="app-menu__label">Lịch công tác
+          </span></a></li>
+      <li><a class="app-menu__item" href="cai-dat-he-thong.html"><i class='app-menu__icon bx bx-cog'></i><span
+            class="app-menu__label">Cài
+            đặt hệ thống</span></a></li>
+      <li><a class="app-menu__item" href="GMAP.html"><i class='app-menu__icon fas fa-map-marker-alt'></i><span
+            class="app-menu__label">MAPS API</span></a></li>
+      <li><a class="app-menu__item" href="GMAP1.html"><i class='app-menu__icon fas fa-map-marker-alt'></i><span
+            class="app-menu__label">MAPS API 1</span></a></li>
+      <li><a class="app-menu__item" href="GMAP2.html"><i class='app-menu__icon fas fa-map-marker-alt'></i><span
+            class="app-menu__label">MAPS API 2</span></a></li>
+      <li><a class="app-menu__item" href="GMAP3.html"><i class='app-menu__icon fas fa-map-marker-alt'></i><span
+            class="app-menu__label">MAPS API 3</span></a></li>
+      <li><a class="app-menu__item" href="GMAP4.html"><i class='app-menu__icon fas fa-map-marker-alt'></i><span
+            class="app-menu__label">MAPS API 4</span></a></li>
+      <li><a class="app-menu__item" href="GMAP5.html"><i class='app-menu__icon fas fa-map-marker-alt'></i><span
+            class="app-menu__label">MAPS API 5</span></a></li>
+      <li><a class="app-menu__item" href="GMAP6.html"><i class='app-menu__icon fas fa-map-marker-alt'></i><span
+            class="app-menu__label">MAPS API 6</span></a></li>
+      <li><a class="app-menu__item" href="GMAP7.html"><i class='app-menu__icon fas fa-map-marker-alt'></i><span
+            class="app-menu__label">MAPS API 7</span></a></li>
+      <li><a class="app-menu__item" href="../ho-chi-minh-city.html"><i class="app-menu__icon fas fa-city"></i><span
+              class="app-menu__label">HO CHI MINH CITY &reg;</span></a></li>
+      <li><a class="app-menu__item" href="../cv-nmc.html"><i class="app-menu__icon fas fa-info-circle"></i><span
+                class="app-menu__label">CV - NMC &trade;</span></a></li>
+    </ul>
+  </aside>
+  <main class="app-content">
+    <div class="app-title">
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item active"><a href="quan-ly-noi-bo.html"><b>Quản lý nội bộ</b></a></li>
+      </ul>
+      <div id="clock"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <div class="tile-body">
+
+            <div class="col-sm-2">
+              <a style="font-size: 15px;" class="btn btn-add btn-sm" href="FORM-them-thong-tin-noi-bo.html"
+                title="Thêm"><i class="fas fa-plus"></i>
+                <strong>Tạo mới</strong></a>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 ">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Danh Sách <small>&copy; Code Website 2021</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
+                        class="fa fa-wrench"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Settings 1</a>
+                      <a class="dropdown-item" href="#">Settings 2</a>
+                    </div>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="them">
+                      <button style="color: white; font-weight: bold;" class="add-new btn-danger btn-block"
+                        title="Thêm">Thêm Thông Tin Nội Bộ</button>
+                    </div>
+                    <div class="card-box table-responsive">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="28"
+                        height="28" viewBox="-12 -10 35 35" stroke-width="2.0" stroke="#00abfb" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <rect x="8" y="8" width="12" height="12" rx="2" />
+                        <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-drag-drop" width="32"
+                        height="28" viewBox="-14 -10 35 35" stroke-width="2.0" stroke="#ff2825" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M19 11v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                        <path d="M13 13l9 3l-4 2l-2 4l-3 -9" />
+                        <line x1="3" y1="3" x2="3" y2="3.01" />
+                        <line x1="7" y1="3" x2="7" y2="3.01" />
+                        <line x1="11" y1="3" x2="11" y2="3.01" />
+                        <line x1="15" y1="3" x2="15" y2="3.01" />
+                        <line x1="3" y1="7" x2="3" y2="7.01" />
+                        <line x1="3" y1="11" x2="3" y2="11.01" />
+                        <line x1="3" y1="15" x2="3" y2="15.01" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder-plus"
+                        width="30" height="28" viewBox="-15 -10 35 35" stroke-width="2.0" stroke="#00b341" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" />
+                        <line x1="12" y1="10" x2="12" y2="16" />
+                        <line x1="9" y1="13" x2="15" y2="13" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder-plus"
+                        width="30" height="28" viewBox="-15 -10 35 35" stroke-width="2.0" stroke="#ff9300" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" />
+                        <line x1="12" y1="10" x2="12" y2="16" />
+                        <line x1="9" y1="13" x2="15" y2="13" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="30"
+                        height="28" viewBox="-15 -10 35 35" stroke-width="2.0" stroke="#9e9e9e" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" />
+                        <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
+                        <rect x="7" y="13" width="10" height="8" rx="2" />
+                      </svg>
+                      <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
+                        <thead style="font-weight: bold; color:green; text-align: center;">
+                          <tr>
+                            <th>Họ và Tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Chức vụ</th>
+                            <th>Lý do cấm</th>
+                            <th>Tình trạng</th>
+                            <th width="100">Tính năng</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr style="font-weight: bold;">
+                            <td>Kiều Thái Anh</td>
+                            <td>10/09/1998</td>
+                            <td style="font-weight: bold; color: maroon; text-align: center;">Thu Ngân</td>
+                            <td style="color: navy;">Gian lận trong công việc đã lấy trộm tiền của công ty và thái độ
+                              không ăn năn hối lỗi
+                            </td>
+                            <td><span class="badge bg-danger">Sa thải</span></td>
+                            <td class="table-td-center">
+                              <button class="delete" class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                data-toggle="tooltip"><i class="fas fa-trash-alt"></i>
+                              </button>
+                              <button class="edit" class="btn btn-primary btn-sm" type="button" title="Sửa"
+                                id="show-emp" data-toggle="tooltip" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                              </button>
+                              <button class="add" class="btn btn-primary btn-sm" type="button" title="Lưu lại"
+                                id="show-emp" data-toggle="tooltip" data-target="#ModalUP"><i
+                                  class="fa fa-floppy-o"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr style="font-weight: bold;">
+                            <td>Nguyễn Thị Kim Yến</td>
+                            <td>02/12/1999</td>
+                            <td style="font-weight: bold; color: maroon; text-align: center;">Thu Ngân</td>
+                            <td style="color: navy;">Gian lận trong công việc đã lấy trộm tiền của công ty và thái độ
+                              không ăn năn hối lỗi
+                            </td>
+                            <td><span class="badge bg-danger">Sa thải</span></td>
+                            <td class="table-td-center">
+                              <button class="delete" class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                data-toggle="tooltip"><i class="fas fa-trash-alt"></i>
+                              </button>
+                              <button class="edit" class="btn btn-primary btn-sm" type="button" title="Sửa"
+                                id="show-emp" data-toggle="tooltip" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                              </button>
+                              <button class="add" class="btn btn-primary btn-sm" type="button" title="Lưu lại"
+                                id="show-emp" data-toggle="tooltip" data-target="#ModalUP"><i
+                                  class="fa fa-floppy-o"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr style="font-weight: bold;">
+                            <td>Nguyễn Hoàng Thái Nhật</td>
+                            <td>07/02/1996</td>
+                            <td style="font-weight: bold; color: maroon; text-align: center;">Quản kho</td>
+                            <td style="color: navy;">Tự ý thay đổi thông tin nhân viên và không báo cáo quản lý</td>
+                            <td><span class="badge bg-warning">Khóa tài khoản</span></td>
+                            <td class="table-td-center">
+                              <button class="delete" class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                data-toggle="tooltip"><i class="fas fa-trash-alt"></i>
+                              </button>
+                              <button class="edit" class="btn btn-primary btn-sm" type="button" title="Sửa"
+                                id="show-emp" data-toggle="tooltip" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                              </button>
+                              <button class="add" class="btn btn-primary btn-sm" type="button" title="Lưu lại"
+                                id="show-emp" data-toggle="tooltip" data-target="#ModalUP"><i
+                                  class="fa fa-floppy-o"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr style="font-weight: bold;">
+                            <td>Võ Thành Nam</td>
+                            <td>19/09/1999</td>
+                            <td style="font-weight: bold; color: maroon; text-align: center;">Dịch vụ</td>
+                            <td style="color: navy;">Phá hỏng 9 sản phẩm của công ty, có kháng cự khi bị bắt (bồi thường
+                              125.000.000 đ)
+                            </td>
+                            <td><span class="badge bg-danger">Sa thải</span></td>
+                            <td class="table-td-center">
+                              <button class="delete" class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                data-toggle="tooltip"><i class="fas fa-trash-alt"></i>
+                              </button>
+                              <button class="edit" class="btn btn-primary btn-sm" type="button" title="Sửa"
+                                id="show-emp" data-toggle="tooltip" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                              </button>
+                              <button class="add" class="btn btn-primary btn-sm" type="button" title="Lưu lại"
+                                id="show-emp" data-toggle="tooltip" data-target="#ModalUP"><i
+                                  class="fa fa-floppy-o"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center" style="font-size: 13px">
+                <p><b>Copyright
+                    <script type="text/javascript">
+                      document.write(new Date().getFullYear());
+                    </script> Phần mềm quản lý bán hàng &copy; Code Website
+                  </b></p>
+              </div>
+  </main>
+  <!-- Essential javascripts for application to work-->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="src/jquery.table2excel.js"></script>
+  <script src="js/main.js"></script>
+  <!-- The javascript plugin to display page loading on top-->
+  <script src="js/plugins/pace.min.js"></script>
+  <!-- Page specific javascripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+  <!-- Data table plugin-->
+  <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript">$('#sampleTable').DataTable();</script>
+  <script src="doc/js/jquery.min.js"></script>
+  <script>
+    function deleteRow(r) {
+      var i = r.parentNode.parentNode.rowIndex;
+      document.getElementById("myTable").deleteRow(i);
+    }
+
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+      var actions = $("table td:last-child").html();
+      $(".add-new").click(function () {
+        $(this).attr("disabled", "disabled");
+        var index = $("table tbody tr:last-child").index();
+        var row = '<tr>' +
+          '<td><input type="text" class="form-control" name="ht" id="ht" placeholder="Họ tên"></td>' +
+          '<td><input type="text" class="form-control" name="ns" id="ns" placeholder="Ngày sinh"></td>' +
+          '<td><input type="text" class="form-control" name="cv" id="cv" value="" placeholder="Chức vụ"></td>' +
+          '<td><input type="text" class="form-control" name="ldc" id="ldc" value="" placeholder="Lý do cấm"></td>' +
+          '<td><input type="text" class="form-control" name="ttr" id="ttr" value="" placeholder="Tình trạng"></td>' +
+          '<td>' + actions + '</td>' +
+          '</tr>';
+        $("table").append(row);
+        $("table tbody tr").eq(index + 1).find(".delete").toggle();
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+      //Kiểm tra rỗng
+      $(document).on("click", ".add", function () {
+        var empty = false;
+        var input = $(this).parents("tr").find('input[type="text"]');
+        input.each(function () {
+          if (!$(this).val()) {
+            $(this).addClass("error");
+            Swal.fire("Thông Báo!", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
+            empty = true;
+          } else {
+            $(this).removeClass("error");
+            Swal.fire("Thông Báo!", "Bạn Chưa Nhập Dữ Liệu", "warning");
+          }
+        });
+        $(this).parents("tr").find(".error").first().focus();
+        if (!empty) {
+          input.each(function () {
+            $(this).parent("td").html($(this).val());
+            Swal.fire("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
+          });
+          $(this).parents("tr").find(".delete").toggle();
+          $(".add-new").removeAttr("disabled");
+        }
+      });
+      // Sửa
+      $(document).on("click", ".edit", function () {
+        $(this).parents("tr").find("td:not(:last-child)").each(function () {
+          $(this).html('<input type="text" class="form-control" value="' + $(this)
+            .text() + '">');
+        });
+        $(this).parents("tr").find(".delete").toggle();
+        $(".add-new").attr("disabled", "disabled");
+      });
+      jQuery(function () {
+        jQuery(".add").click(function () {
+          Swal.fire("Thành Công!", "Bạn Đã Lưu Thành Công", "success");
+        });
+      });
+      //Xóa
+      $(document).on("click", ".delete", function () {
+        $(this).parents("tr").remove();
+        Swal.fire("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
+        $(".add-new").removeAttr("disabled");
+      });
+    });
+  
+    //Thời Gian
+    function time() {
+      var today = new Date();
+      var weekday = new Array(7);
+      weekday[0] = "Chủ Nhật";
+      weekday[1] = "Thứ Hai";
+      weekday[2] = "Thứ Ba";
+      weekday[3] = "Thứ Tư";
+      weekday[4] = "Thứ Năm";
+      weekday[5] = "Thứ Sáu";
+      weekday[6] = "Thứ Bảy";
+      var day = weekday[today.getDay()];
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1;
+      var yyyy = today.getFullYear();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      nowTime = h + " giờ " + m + " phút " + s + " giây";
+      if (dd < 10) {
+        dd = '0' + dd
+      }
+      if (mm < 10) {
+        mm = '0' + mm
+      }
+      today = day + ', ' + dd + '/' + mm + '/' + yyyy;
+      tmp = '<span class="date"> <i class="bx bxs-calendar" ></i> ' + today + ' | <i class="fa fa-clock-o" aria-hidden="true"></i>  : ' + nowTime +
+        '</span>';
+      document.getElementById("clock").innerHTML = tmp;
+      clocktime = setTimeout("time()", "1000", "Javascript");
+
+      function checkTime(i) {
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
+      }
+    }
+  
+    //Modal
+    $("#show-emp").on("click", function () {
+      $("#ModalUP").modal({ backdrop: false, keyboard: false })
+    });
+  </script>
+
+
+  <!-- Bootstrap -->
+  <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Datatables -->
+  <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+  <script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+  <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+  <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+  <script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+  <script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+  <script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+  <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+  <script src="../vendors/jszip/dist/jszip.min.js"></script>
+  <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+  <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="../build/js/custom.min.js"></script>
+</body>
+
+</html>

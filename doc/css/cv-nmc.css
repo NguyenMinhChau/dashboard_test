@@ -1,0 +1,181 @@
+/***************************BODY*********************************************/
+body{
+    background-color: white;
+    margin: 0px;
+    padding: 0% 15% 0% 15%;
+    width: 100%;
+}
+@media (max-width: 320px) {} 
+@media (max-width: 480px) {}
+@media (max-width: 600px) {}
+@media (max-width: 800px) {}
+@media (max-width: 768px) {}
+@media (max-width: 1024px) {}
+@media (min-width: 1025px) {}
+/****************Phần Giới Thiệu - Mục Tiêu Nghề Nghiệp - Kỹ Năng - Sở Thích****************/
+.info1{
+    width: 40%;
+    min-height: 120px;
+    float: left;
+    background-color: rgb(54,64,79);
+    text-align: center;
+}
+.info2{
+    width: 60%;
+    min-height: 120px;
+    float: left;
+    background-color: white;
+}
+@media screen and (max-width: 600px) {
+    .info, .info1, .info2 {
+      width: 100%;
+    }
+}   
+/*Năm sinh - Địa chỉ*/
+.Birthday{
+    text-align: left;
+    color: white;
+}
+.Birthday1:hover{
+    color: white;
+}
+/*KỸ NĂNG*/
+#progress {
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 80%;
+    padding: 3px;
+}
+
+#progress:after {
+    content: '';
+    display: block;
+    background: white;
+    width: 88%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+#progress1 {
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 80%;
+    padding: 3px;
+}
+
+#progress1:after {
+    content: '';
+    display: block;
+    background: white;
+    width: 83%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+#progress2 {
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 80%;
+    padding: 3px;
+}
+
+#progress2:after {
+    content: '';
+    display: block;
+    background: white;
+    width: 67%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+#progress3 {
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 80%;
+    padding: 3px;
+}
+
+#progress3:after {
+    content: '';
+    display: block;
+    background: white;
+    width: 60%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+#progress3A {
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 80%;
+    padding: 3px;
+}
+
+#progress3A:after {
+    content: '';
+    display: block;
+    background: white;
+    width: 80%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+#progress5 {
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 80%;
+    padding: 3px;
+}
+
+#progress5:after {
+    content: '';
+    display: block;
+    background: white;
+    width: 90%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+#progress6 {
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 80%;
+    padding: 3px;
+}
+
+#progress6:after {
+    content: '';
+    display: block;
+    background: white;
+    width: 50%;
+    height: 100%;
+    border-radius: 9px;
+}
+/*********************Phần Học vấn - Kinh Ngiệm***************/
+/*HỌC VẤN*/
+.Education{
+    text-align: left;
+    color: black;
+    font-weight: bold;
+}
+.Education1{
+    text-align: left;
+    color: rgb(117, 114, 114);
+    font-weight: bold;
+}
+.Education3{
+    font-weight: bold;
+    float: left;
+    margin-top: -25px;
+    margin-left: 30px;
+}
+p > a[href]{
+    text-decoration: none;
+}

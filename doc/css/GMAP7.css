@@ -1,0 +1,109 @@
+h2,
+small,
+.input-sm,
+.dataTables_paginate,
+.dataTables_info {
+    font-weight: bold;
+    color: black;
+}
+
+#map {
+    height: 50%;
+    /* margin: 5% 10% 0 10%; */
+}
+
+body {
+    padding: 0 !important;
+}
+
+table {
+    font-size: 12px;
+}
+
+.hotel-search {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 440px;
+    z-index: 1;
+}
+
+#map {
+    margin-top: 40px;
+    width: 440px;
+    float: left;
+}
+
+#listing {
+    /* position: absolute; */
+    width: 200px;
+    height: 100px;
+    /* overflow: auto; */
+    left: 442px;
+    top: 0px;
+    cursor: pointer;
+    /* overflow-x: hidden; */
+}
+
+#findhotels {
+    font-size: 14px;
+}
+
+#autocomplete {
+    width: 100%;
+}
+
+#country {
+    width: 100%;
+}
+
+.placeIcon {
+    width: 20px;
+    height: 34px;
+    margin: 4px;
+}
+
+.hotelIcon {
+    width: 24px;
+    height: 24px;
+}
+
+
+#rating {
+    font-size: 13px;
+    font-family: Arial Unicode MS;
+}
+
+.iw_table_row {
+    height: 18px;
+}
+
+.iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+}
+
+.iw_table_icon {
+    text-align: right;
+}
+
+@media (max-width: 320px) {}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 600px) {}
+
+@media (max-width: 800px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 1024px) {}
+
+@media (min-width: 1025px) {}
